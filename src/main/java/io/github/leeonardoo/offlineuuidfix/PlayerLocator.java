@@ -1,13 +1,14 @@
 package io.github.leeonardoo.offlineuuidfix;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import io.github.leeonardoo.offlineuuidfix.model.PlayerProfileModel;
 import org.apache.commons.io.IOUtils;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 public class PlayerLocator {
@@ -16,7 +17,7 @@ public class PlayerLocator {
     public static UUID getOnlineUUID(String playerName) {
         String url = "https://api.mojang.com/users/profiles/minecraft/" + playerName;
         try {
-            String response = IOUtils.toString(new URL(url), Charset.defaultCharset());
+            String response = IOUtils.toString(new URL(url), StandardCharsets.UTF_8);
             Gson gson = new Gson();
             PlayerProfileModel playerModel = gson.fromJson(response, PlayerProfileModel.class);
 

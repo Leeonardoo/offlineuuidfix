@@ -34,7 +34,8 @@ displayName = "Offline UUID Fix" #mandatory
 authors = "Leeonardoo" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-
+A Minecraft Forge mod that converts offline player UUIDs to official ones,
+in case you switched online-mode and don't want to lose your stuff.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.offlineuuidfix]] #optional
